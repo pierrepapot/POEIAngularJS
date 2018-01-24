@@ -7,8 +7,13 @@
 		vm.detail = "show";
 
 		vm.status = statusB;
+
 		function statusB(){
-			vm.detail = "hide";
+			if(vm.detail === "show"){
+				vm.detail = "hide";
+			} else{
+				vm.detail = "show";
+			}
 		}
 	}
 
