@@ -1,0 +1,8 @@
+<div class="flex-container">
+	<div class="flex-item" id="listeFilmes">
+		<li ng-repeat="film in exo.films" class="flex-item"><img ng-click="exo.selectImg($index)" src="{{film.img}}" ng-class="{'select': exo.name === film.name}"></img></li>
+	</div>
+	<div class="flex-item" id="detailFilm">
+		<ng-include src="'src/app/exo03/detail-partial/detail.html'"></ng-include>
+	</div>
+</div>

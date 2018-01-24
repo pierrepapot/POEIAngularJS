@@ -1,0 +1,9 @@
+<div ng-controller="DetailCtrl as details">
+	<div ng-if="exo.selectImg">
+		<div ng-show="details.detail === 'show'" ng-hide="details.detail === 'hide'">
+			<p>{{ exo.name }}</p>
+			<p>{{ exo.date }}</p>	
+		</div>
+		<button ng-click="details.status()">Cacher</button>
+</div>
+</div>
