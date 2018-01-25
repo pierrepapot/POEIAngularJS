@@ -1,11 +1,22 @@
 (function(){
 	'use strict';
 
-	function MoreCtrl(){
+	function MoreCtrl($location, meteoService){
 		var vm = this;
+
+		vm.meteo = meteoService;
+		console.log(vm.meteo);
+
+		vm.goTo = goTo;
+		function goTo(direction){
+			if(direction === 'exo04'){
+				$location.path('/exo04');
+			}
+		}
+
 	}
 
-	MoreCtrl.$inject = [];
+	MoreCtrl.$inject = ['$location', 'meteoService'];
 
-	angular.module('daproject').controlller('MoreCtrl', MoreCtrl);
+	angular.module('daproject').controller('MoreCtrl', MoreCtrl);
 })();
