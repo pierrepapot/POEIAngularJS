@@ -1,0 +1,12 @@
+<div class="flex-container">
+	<input ng-model="exo4.input">	
+	<label></label>
+	<button ng-click="exo4.button()">Search</button>
+	<div>
+			<p>{{exo4.service.city}}</p>
+			<div>
+				<img src="http://openweathermap.org/img/w/{{exo4.meteo.meteoListe[0].weather[0].icon}}.png">
+				<p>{{exo4.meteo.meteoListe[0].main.temp}}</p>
+			</div>
+	</div>
+</div>
