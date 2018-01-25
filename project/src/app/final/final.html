@@ -1,0 +1,12 @@
+<div class="flex-container">
+	<div id="drink">
+		<input ng-model="final.ingredient">
+		<label>Buvons !</label>
+		<button ng-click="final.click()"></button>
+		<p>{{final.search.ingredient}}</p>
+	</div>
+	<ul>
+		<cocktailservice  ng-repeat="cocktail in final.cocktail.cocktailList" cocktail-element ="cocktail" ng-click="final.cocktail.get(cocktail.cocktailDetail.idDrink)"></cocktailservice>
+	</ul>
+</div>
+
