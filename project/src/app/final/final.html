@@ -5,6 +5,8 @@
 		<button ng-click="final.click()"></button>
 		<p>{{final.search.ingredient}}</p>
 	</div>
+</div>
+<div class="flex-listContainer">
 	<ul>
 		<cocktailservice  ng-repeat="cocktail in final.cocktail.cocktailList" cocktail-element ="cocktail" ng-click="final.cocktail.get(cocktail.idDrink)"></cocktailservice>
 	</ul>
