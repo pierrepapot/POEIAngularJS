@@ -14,32 +14,34 @@
 		cocktail.goTo = goTo;
 
 
-
-		function getcocktailDetails(cocktailId){
-			return $http.get('http://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+cocktailDetail.idDrink+'')
-			.then(function(response){
-				console.log('success');
-				cocktailDetail = response.drinks[0];
-			})
-			.catch(function(error){
-				console.log('error');
-				cocktailDetail = {};
-			});
-		}
-
 		function getCocktail(){
-			return $http.get('http://www.thecocktaildb.com/api/json/v1/1/filter.php?i='+cocktail.search.ingredient+'')
+			return $http.get('http://www.thecocktaildb.com/api/json/v1/1/filter.php?i='+cocktail.search.ingredient)
 			.then(function(response){
 				console.log('success');
 				cocktail.cocktailList = response.data.drinks;
-				console.log(cocktail.cocktailList)
-				cocktail.goTo('cocktailDetail')
+				console.log(cocktail.cocktailList);
 			})
 			.catch(function(error){
-				console.log('error');
-				cocktailList = [];
+				console.log('error cocktail');
+				cocktail.cocktailList = [];
 			});
 		}
+
+		function getcocktailDetails(cocktailId){
+			return $http.get('http://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+cocktailId)
+			.then(function(response){
+				console.log('success');
+				console.log(response);
+
+				cocktail.cocktailDetail = response.data.drinks[0];
+				cocktail.goTo('cocktailDetail');
+			})
+			.catch(function(error){
+				console.log('error detail');
+				cocktail.cocktailDetail = {};
+			});
+		}
+
 		function goTo(direction){
 			if(direction === 'cocktailDetail'){
 				$location.path('/cocktailDetail');
